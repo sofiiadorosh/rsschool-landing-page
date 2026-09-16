@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
-  } 
+  }
 
   &__title {
     font-weight: 600;
@@ -28,18 +28,14 @@
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 40px;
   }
 
   &__slider {
     width: 100%;
     max-width: 480px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
     overflow: hidden;
   }
 
@@ -111,20 +107,21 @@
     }
   }
 
-
-
   .arrow {
     &__list {
       display: none;
 
       @media screen and (min-width: 768px) {
         position: absolute;
-        top: 50%;
+        // Stretch over the slider only, not the bullets below it,
+        // so the arrows stay centred on the slide: 4px bullet + 40px gap.
+        top: 0;
+        right: 0;
+        bottom: 44px;
         left: 0;
-        transform: translateY(-50%);
-        width: 100%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
       }
     }
 
