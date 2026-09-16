@@ -38,4 +38,11 @@
     <path d="M25.2737 24.2007L20.0622 19.1195L4.68213 34.1166C5.25433 34.7031 6.18744 34.7737 7.24856 34.1873L25.2737 24.2007" fill="currentColor"/>
     <path d="M25.2737 12.1876L7.24856 2.20103C6.18744 1.62058 5.25433 1.69125 4.68213 2.27772L20.0622 17.2688L25.2737 12.1876Z" fill="currentColor"/>
   </symbol>
+  <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none">
+    <path d="M18.5 12H6M12 18L6 12L12 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none">
+    <path d="M6 12H18.5M12.5 18L18.5 12L12.5 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>
