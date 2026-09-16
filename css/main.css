@@ -86,15 +86,7 @@ body {
   }
 }
 
-.footer {
-  padding: 0 16px;
-}
-@media screen and (min-width: 768px) {
-  .footer {
-    padding: 0 40px;
-  }
-}
-.footer__container {
+.footer__content {
   padding: 60px 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -108,13 +100,13 @@ body {
   border-radius: 40px;
 }
 @media screen and (min-width: 768px) {
-  .footer__container {
+  .footer__content {
     padding: 100px 60px;
     gap: 100px;
   }
 }
 @media screen and (min-width: 1440px) {
-  .footer__container {
+  .footer__content {
     padding: 100px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
