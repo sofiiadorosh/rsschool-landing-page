@@ -113,8 +113,6 @@
 
       @media screen and (min-width: 768px) {
         position: absolute;
-        // Stretch over the slider only, not the bullets below it,
-        // so the arrows stay centred on the slide: 4px bullet + 40px gap.
         top: 0;
         right: 0;
         bottom: 44px;

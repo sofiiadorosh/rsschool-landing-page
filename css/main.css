@@ -648,6 +648,11 @@ body {
      object-fit: cover;
   border-radius: 40px;
 }
+@media screen and (min-width: 768px) {
+  .enjoy__video {
+    aspect-ratio: 688/644;
+  }
+}
 .enjoy__content {
   position: absolute;
   top: 0;
@@ -664,17 +669,34 @@ body {
           flex-direction: column;
   gap: 40px;
 }
+@media screen and (min-width: 768px) {
+  .enjoy__content {
+    left: 40px;
+    right: 40px;
+    padding: 100px 60px;
+  }
+}
 .enjoy__title {
+  width: 100%;
+  max-width: 530px;
   font-weight: 600;
   font-size: 42px;
   line-height: 1.15;
   color: #e1d4c9;
+}
+@media screen and (min-width: 768px) {
+  .enjoy__title {
+    font-size: 72px;
+    line-height: 1.05;
+  }
 }
 .enjoy__title_highlight {
   font-style: italic;
   color: #b0907a;
 }
 .enjoy__description {
+  width: 100%;
+  max-width: 530px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
