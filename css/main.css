@@ -371,6 +371,11 @@ body {
   font-size: 32px;
   line-height: 1.25;
 }
+@media screen and (min-width: 768px) {
+  .resource__description {
+    font-size: 60px;
+  }
+}
 .resource__description_highlight {
   font-style: italic;
   color: #b0907a;
