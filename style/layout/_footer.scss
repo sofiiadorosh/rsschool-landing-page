@@ -19,6 +19,12 @@
       padding: 100px 60px;
       gap: 100px;
     }
+
+    @media screen and (min-width: 1440px) {
+      padding: 100px;
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__offer {
