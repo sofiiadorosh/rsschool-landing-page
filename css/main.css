@@ -50,10 +50,16 @@ a {
 }
 
 body {
+  padding: 20px 0;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   color: #403f3d;
   background: #e1d4c9;
+}
+@media screen and (min-width: 768px) {
+  body {
+    padding: 40px 0;
+  }
 }
 
 .container {
@@ -71,6 +77,11 @@ body {
 .footer {
   padding: 0 16px;
 }
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 0 40px;
+  }
+}
 .footer__container {
   padding: 60px 16px;
   display: -webkit-box;
@@ -84,8 +95,13 @@ body {
   background: #665f55;
   border-radius: 40px;
 }
+@media screen and (min-width: 768px) {
+  .footer__container {
+    padding: 100px 60px;
+    gap: 100px;
+  }
+}
 .footer__offer {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,6 +123,11 @@ body {
   font-size: 32px;
   line-height: 1.25;
   color: #e1d4c9;
+}
+@media screen and (min-width: 768px) {
+  .footer__offer .offer__title {
+    font-size: 60px;
+  }
 }
 .footer__offer .offer__title_highlight {
   font-style: italic;
@@ -187,7 +208,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 .footer__contact .contact__icon {
   color: #e1d4c9;

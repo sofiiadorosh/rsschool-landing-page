@@ -3,6 +3,10 @@
 .footer {
   padding: 0 16px;
 
+  @media screen and (min-width: 768px) {
+    padding: 0 40px;
+  }
+
   &__container {
     padding: 60px 16px;
     display: flex;
@@ -10,10 +14,14 @@
     gap: 40px;
     background: $container-background;
     border-radius: 40px;
+
+    @media screen and (min-width: 768px) {
+      padding: 100px 60px;
+      gap: 100px;
+    }
   }
 
   &__offer {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -25,6 +33,10 @@
       font-size: 32px;
       line-height: 1.25;
       color: $inverse-text;
+
+      @media screen and (min-width: 768px) {
+        font-size: 60px;
+      }
 
       &_highlight {
         font-style: italic;
@@ -84,7 +96,7 @@
     .contact__link {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 8px;
     }
 
     .contact__icon {
