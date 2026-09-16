@@ -28,6 +28,8 @@
   }
 
   &__offer {
+    width: 100%;
+    max-width: 530px;
     display: flex;
     flex-direction: column;
     gap: 40px;

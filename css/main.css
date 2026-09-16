@@ -126,6 +126,8 @@ body {
   }
 }
 .footer__offer {
+  width: 100%;
+  max-width: 530px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -260,6 +262,17 @@ body {
     gap: 100px;
   }
 }
+@media screen and (min-width: 1440px) {
+  .download__container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 .download__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,7 +290,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .download__title {
-    font-size: 62px;
+    font-size: 60px;
   }
 }
 .download__title_highlight {
