@@ -62,6 +62,18 @@ body {
   }
 }
 
+.main {
+  margin-bottom: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 100px;
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
@@ -231,4 +243,85 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #e1d4c9;
+}
+
+.download__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+.download__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+.download__title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.25;
+}
+.download__title_highlight {
+  font-style: italic;
+  color: #b0907a;
+}
+.download__description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.download__list {
+  max-width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.download__item {
+  width: 100%;
+  padding: 12px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  background: #e1d4c9;
+  border: 1px solid #665f55;
+  border-radius: 100px;
+  outline: none;
+}
+.download__icon {
+  color: #403f3d;
+}
+.download__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.download__text_highlight {
+  font-size: 16px;
+  line-height: 1.5;
 }/*# sourceMappingURL=main.css.map */

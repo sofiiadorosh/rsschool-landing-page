@@ -12,6 +12,13 @@ body {
   }
 }
 
+.main {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
