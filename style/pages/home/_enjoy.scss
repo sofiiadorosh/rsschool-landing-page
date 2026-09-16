@@ -1,0 +1,63 @@
+@use "../../abstracts/variables" as *;
+
+.enjoy {
+  &__container {
+    position: relative;
+  }
+
+  &__video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 348 / 552;
+    display: block;
+    object-fit: cover;
+    border-radius: 40px;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+    height: 100%;
+    padding: 60px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.15;
+    color: $inverse-text;
+
+    &_highlight {
+      font-style: italic;
+      color: $accent-text;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $inverse-text;
+  }
+
+  &__link {
+    width: 100%;
+    max-width: 200px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $primary-text;
+    background: $page-background;
+    border-radius: 100px;
+  }
+}

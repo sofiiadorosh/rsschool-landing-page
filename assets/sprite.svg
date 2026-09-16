@@ -45,4 +45,11 @@
   <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none">
     <path d="M6 12H18.5M12.5 18L18.5 12L12.5 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+
+  <symbol id="icon-coffee-cup" viewBox="0 0 20 20" fill="none">
+    <path d="M14.1666 9.76667V11.6667C14.1666 14.8883 11.555 17.5 8.33329 17.5C5.11163 17.5 2.49996 14.8883 2.49996 11.6667V9.76667C2.49996 9.4353 2.76859 9.16667 3.09996 9.16667H13.5666C13.898 9.16667 14.1666 9.4353 14.1666 9.76667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9.99996 7.49996C9.99996 6.66663 10.5952 5.83329 11.7857 5.83329C13.1006 5.83329 14.1666 4.7673 14.1666 3.45234V2.91663" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6.66671 7.5V7.08333C6.66671 5.70262 7.786 4.58333 9.16671 4.58333C10.0872 4.58333 10.8334 3.83714 10.8334 2.91667V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13.3334 9.16663H15.4167C16.5673 9.16663 17.5 10.0994 17.5 11.25C17.5 12.4006 16.5673 13.3333 15.4167 13.3333H14.1667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>

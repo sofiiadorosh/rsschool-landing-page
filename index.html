@@ -11,6 +11,35 @@
 </head>
 <body>
   <main class="main">
+    <section class="enjoy">
+      <div class="container enjoy__container">
+        <video
+          class="enjoy__video"
+          playsinline
+          autoplay
+          muted
+          loop
+          poster="./assets/webp/enjoy-poster.webp"
+          width="1440"
+          height="760"
+        >
+          <source src="./assets/video/enjoy.webm" type="video/webm" />
+        </video>
+        <div class="enjoy__content">
+          <h1 class="enjoy__title">
+            <span class="enjoy__title_highlight">Enjoy</span>
+            <span class="enjoy__title_text">premium coffee at our charming cafe</span>
+          </h1>
+          <p class="enjoy__description">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
+          <a href="./menu.html" class="enjoy__link">
+            <span>Menu</span>
+            <svg width="20" height="20" class="enjoy__icon">
+              <use href="assets/sprite.svg#icon-coffee-cup"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
     <section class="choose">
       <div class="container choose__container">
         <h2 class="choose__title">
@@ -23,11 +52,11 @@
             <ul class="choose__list">
               <li class="choose__item">
                 <img
+                  class="choose__image"
                   src="./assets/webp/smores-frappuccino.webp"
                   alt="S’mores Frappuccino in a tall glass, topped with foam and crushed ice"
                   width="1060"
                   height="1060"
-                  class="choose__image"
                 />
                 <div class="choose__box">
                   <h3 class="choose__subtitle">S’mores Frappuccino</h3>
@@ -37,11 +66,11 @@
               </li>
               <li class="choose__item">
                 <img
+                  class="choose__image"
                   src="./assets/webp/caramel-macchiato.webp"
                   alt="Caramel Macchiato in a glass cup, with layers of espresso, milk and foam"
                   width="1060"
                   height="1060"
-                  class="choose__image"
                 />
                 <div class="choose__box">
                   <h3 class="choose__subtitle">Caramel Macchiato</h3>
@@ -51,11 +80,11 @@
               </li>
               <li class="choose__item">
                 <img
+                  class="choose__image"
                   src="./assets/webp/ice-coffee.webp"
                   alt="Ice coffee in a tall glass with large ice cubes"
                   width="1060"
                   height="1060"
-                  class="choose__image"
                 />
                 <div class="choose__box">
                   <h3 class="choose__subtitle">Ice coffee</h3>
