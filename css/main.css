@@ -641,8 +641,7 @@ body {
 }
 .enjoy__video {
   width: 100%;
-  height: auto;
-  aspect-ratio: 348/552;
+  height: 552px;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
@@ -650,7 +649,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .enjoy__video {
-    aspect-ratio: 688/644;
+    height: 644px;
   }
 }
 .enjoy__content {
@@ -674,6 +673,11 @@ body {
     left: 40px;
     right: 40px;
     padding: 100px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .enjoy__content {
+    padding: 100px;
   }
 }
 .enjoy__title {
@@ -722,4 +726,9 @@ body {
   color: #403f3d;
   background: #e1d4c9;
   border-radius: 100px;
+}
+@media screen and (min-width: 1440px) {
+  .enjoy__icon {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */

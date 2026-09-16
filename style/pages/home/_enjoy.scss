@@ -7,14 +7,13 @@
 
   &__video {
     width: 100%;
-    height: auto;
-    aspect-ratio: 348 / 552;
+    height: 552px;
     display: block;
     object-fit: cover;
     border-radius: 40px;
 
     @media screen and (min-width: 768px) {
-      aspect-ratio: 688 / 644;
+      height: 644px;
     }
   }
 
@@ -33,6 +32,10 @@
       left: 40px;
       right: 40px;
       padding: 100px 60px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      padding: 100px;
     }
   }
 
@@ -78,5 +81,11 @@
     color: $primary-text;
     background: $page-background;
     border-radius: 100px;
+  }
+
+  &__icon {
+    @media screen and (min-width: 1440px) {
+      display: none;
+    }
   }
 }
