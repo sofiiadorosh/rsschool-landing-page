@@ -58,8 +58,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 1px solid $primary-border;
-      border-radius: 100px;
     }
 
     .socials__link {
@@ -68,10 +66,27 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background: transparent;
+      border: 1px solid $primary-border;
+      border-radius: 100px;
+      transition: background 250ms $timing-function, border 250ms $timing-function;
+
+
+      @media (hover: hover) {
+        &:hover {
+          background: $page-background;
+          border: transparent;
+
+          .socials__icon {
+            color: $primary-text;
+          }
+        }
+      }
     }
 
     .socials__icon {
       color: $inverse-text;
+      transition: color 250ms $timing-function;
     }
   }
 
@@ -99,6 +114,30 @@
       display: flex;
       align-items: center;
       gap: 8px;
+    }
+
+    .contact__link {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $inverse-text;
+        transform: scale(0);
+        transition: transform 500ms $timing-function;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          &::before {
+            transform: scale(1);
+          }
+        }
+      }
     }
 
     .contact__icon {
