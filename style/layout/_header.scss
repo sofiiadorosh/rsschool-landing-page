@@ -8,6 +8,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (min-width: 1440px) {
+      justify-content: flex-start;
+    }
   }
 
   .navigation {
@@ -31,10 +35,10 @@
     }
 
     @media screen and (min-width: 1440px) {
-      position: static;
-      transform: unset;
-      padding: 0;
-      flex-direction: row;
+      // Drop the nav box so its children become flex items of
+      // .header__container — that lets `order` move the menu link
+      // past .control without duplicating it in the markup.
+      display: contents;
     }
 
     &__list {
@@ -44,6 +48,7 @@
       gap: 60px;
 
       @media screen and (min-width: 1440px) {
+        margin: 0 auto;
         flex-direction: row;
         gap: 40px;
       }
@@ -79,11 +84,21 @@
       text-align: center;
 
       @media screen and (min-width: 1440px) {
-        // TODO
-        display: none;
+        order: 1;
+        margin-left: 24px;
         gap: 8px;
         font-size: 16px;
         line-height: 1.5;
+      }
+
+      &__icon {
+        width: 40px;
+        height: 40px;
+
+        @media screen and (min-width: 1440px) {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }

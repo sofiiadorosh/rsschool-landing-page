@@ -101,6 +101,13 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (min-width: 1440px) {
+  .header__container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
 .header .navigation {
   position: fixed;
   bottom: -100px;
@@ -134,14 +141,7 @@ body {
 }
 @media screen and (min-width: 1440px) {
   .header .navigation {
-    position: static;
-    -webkit-transform: unset;
-            transform: unset;
-    padding: 0;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    display: contents;
   }
 }
 .header .navigation__list {
@@ -159,6 +159,7 @@ body {
 }
 @media screen and (min-width: 1440px) {
   .header .navigation__list {
+    margin: 0 auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -208,10 +209,23 @@ body {
 }
 @media screen and (min-width: 1440px) {
   .header .navigation .menu-link {
-    display: none;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-left: 24px;
     gap: 8px;
     font-size: 16px;
     line-height: 1.5;
+  }
+}
+.header .navigation .menu-link__icon {
+  width: 40px;
+  height: 40px;
+}
+@media screen and (min-width: 1440px) {
+  .header .navigation .menu-link__icon {
+    width: 20px;
+    height: 20px;
   }
 }
 .header .control {
