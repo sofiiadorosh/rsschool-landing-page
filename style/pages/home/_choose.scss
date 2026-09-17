@@ -143,7 +143,7 @@
       @media (hover: hover) {
         &:hover {
           background: $container-background;
-          border-color: none;
+          border-color: transparent;
           cursor: pointer;
 
           .arrow__icon {

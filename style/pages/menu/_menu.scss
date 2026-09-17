@@ -188,9 +188,26 @@
     border: 1px solid $inverse-border;
     border-radius: 100px;
     outline: none;
+    transition: background 250ms $timing-function, border-color 250ms $timing-function;
 
     @media screen and (min-width: 1440px) {
       display: none;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background: $container-background;
+        border-color: transparent;
+        cursor: pointer;
+
+        .refresh-icon {
+          color: $inverse-text;
+        }
+      }
+    }
+
+    .refresh-icon {
+      transition: color 250ms $timing-function;
     }
   }
 }
