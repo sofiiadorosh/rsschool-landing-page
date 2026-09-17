@@ -49,6 +49,8 @@
           color: $inverse-text;
           background: $container-background;
           border-color: transparent;
+          cursor: default;
+          pointer-events: none;
         }
 
         .filter__icon {
@@ -71,6 +73,20 @@
       border: 1px solid $primary-border;
       border-radius: 100px;
       outline: none;
+      transition: background 250ms $timing-function, border-color 250ms $timing-function;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $inverse-text;
+          background: $container-background;
+          border-color: transparent;
+          cursor: pointer;
+
+          .filter__icon {
+            background: $page-background;
+          }
+        }
+      }
     }
 
     &__icon {
@@ -81,6 +97,7 @@
       align-items: center;
       background: $primary-border;
       border-radius: 100px;
+      transition: background 250ms $timing-function;
     }
   }
 
