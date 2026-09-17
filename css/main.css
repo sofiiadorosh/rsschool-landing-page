@@ -86,6 +86,183 @@ body {
   }
 }
 
+.header {
+  margin-bottom: 20px;
+}
+.header__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .navigation {
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  width: 100%;
+  height: 100%;
+  padding: 60px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 100px;
+  background: #e1d4c9;
+  z-index: 1;
+}
+.header .navigation__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+}
+.header .navigation__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .navigation__link {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.25;
+  text-align: center;
+}
+.header .navigation .menu-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.25;
+  text-align: center;
+}
+.header .control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+}
+.header .theme-switch {
+  padding: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #c1b6ad;
+  border-radius: 100px;
+}
+.header .theme-switch__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+.header .theme-switch__item {
+  width: 44px;
+  height: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+  border-radius: 100px;
+}
+.header .theme-switch__item_active {
+  background: #b0907a;
+}
+.header .theme-switch__item_active .theme-switch__icon {
+  color: #e1d4c9;
+}
+.header .theme-switch__icon {
+  color: #403f3d;
+}
+.header .burger-button {
+  position: relative;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+  border: 1px solid #665f55;
+  border-radius: 100px;
+  outline: none;
+}
+.header .burger-button::before, .header .burger-button::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  border: 1px solid #403f3d;
+  border-radius: 100px;
+}
+.header .burger-button::before {
+  top: 16px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.header .burger-button::after {
+  bottom: 16px;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
 .footer__content {
   padding: 60px 16px;
   display: -webkit-box;

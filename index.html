@@ -10,6 +10,54 @@
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="./index.html" class="logo">
+        <svg width="100" height="60" class="logo__icon">
+          <use href="assets/sprite.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a class="navigation__link">Favorite coffee</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link">About</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link">Mobile app</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link">Contact us</a>
+          </li>
+        </ul>
+        <a class="menu-link">
+          <span>Menu</span>
+          <svg width="40" height="40" class="menu-link__icon">
+            <use href="assets/sprite.svg#icon-coffee-cup"></use>
+          </svg>
+        </a>
+      </nav>
+      <div class="control">
+        <div class="theme-switch">
+          <ul class="theme-switch__list">
+            <li class="theme-switch__item theme-switch__item_active">
+              <svg width="22" height="22" class="theme-switch__icon">
+                <use href="assets/sprite.svg#icon-sun"></use>
+              </svg>
+            </li>
+            <li class="theme-switch__item">
+              <svg width="18" height="18" class="theme-switch__icon">
+                <use href="assets/sprite.svg#icon-moon"></use>
+              </svg>
+            </li>
+          </ul>
+        </div>
+        <button type="button" class="burger-button"></button>
+      </div>
+    </div>
+  </header>
   <main class="main">
     <section class="enjoy">
       <div class="container enjoy__container">
