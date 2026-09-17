@@ -61,19 +61,41 @@
     }
 
     &__link {
+      position: relative;
       font-weight: 600;
       font-size: 32px;
       line-height: 1.25;
       text-align: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $primary-text;
+        transform: scale(0);
+        transition: transform 500ms $timing-function;
+      }
 
       @media screen and (min-width: 1440px) {
         padding: 16px 0;
         font-size: 16px;
         line-height: 1.5;
       }
+
+      @media (hover: hover) {
+        &:hover {
+          &::before {
+            transform: scale(1);
+          }
+        }
+      }
     }
 
     .menu-link {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -83,12 +105,33 @@
       line-height: 1.25;
       text-align: center;
 
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $primary-text;
+        transform: scale(0);
+        transition: transform 500ms $timing-function;
+      }
+
       @media screen and (min-width: 1440px) {
         order: 1;
         margin-left: 24px;
+        padding: 16px 0;
         gap: 8px;
         font-size: 16px;
         line-height: 1.5;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          &::before {
+            transform: scale(1);
+          }
+        }
       }
 
       &__icon {
@@ -139,9 +182,23 @@
       align-items: center;
       background: transparent;
       border-radius: 100px;
+      transition: background 250ms $timing-function;
+
+      @media (hover: hover) {
+        &:hover {
+          background: $inverse-border;
+          cursor: pointer;
+
+          .theme-switch__icon {
+            color: $inverse-text;
+          }
+        }
+      }
 
       &_active {
         background: $accent-text;
+        cursor: default;
+        pointer-events: none;
 
         .theme-switch__icon {
           color: $inverse-text;
@@ -151,6 +208,7 @@
 
     &__icon {
       color: $primary-text;
+      transition: color 250ms $timing-function;
     }
   }
 
@@ -188,6 +246,13 @@
     &::after {
       bottom: 16px;
       transform: translateY(50%);
+    }
+  }
+
+  &.home {
+    .logo {
+      cursor: default;
+      pointer-events: none;
     }
   }
 }
