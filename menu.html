@@ -12,12 +12,12 @@
 <body>
   <header class="header menu">
     <div class="container header__container">
-      <a href="./index.html" class="logo">
-        <svg width="100" height="60" class="logo__icon">
+      <a href="./index.html" class="logo" aria-label="Coffee House, home">
+        <svg width="100" height="60" class="logo__icon" aria-hidden="true" focusable="false">
           <use href="assets/sprite.svg#icon-logo"></use>
         </svg>
       </a>
-      <nav class="navigation">
+      <nav id="navigation" class="navigation">
         <ul class="navigation__list">
           <li class="navigation__item">
             <a href="./index.html#favorite-coffee" class="navigation__link">Favorite coffee</a>
@@ -34,7 +34,7 @@
         </ul>
         <a href="./menu.html" class="menu-link">
           <span>Menu</span>
-          <svg class="menu-link__icon">
+          <svg class="menu-link__icon" aria-hidden="true" focusable="false">
             <use href="assets/sprite.svg#icon-coffee-cup"></use>
           </svg>
         </a>
@@ -43,44 +43,54 @@
         <div class="theme-switch">
           <ul class="theme-switch__list">
             <li class="theme-switch__item theme-switch__item_active">
-              <svg width="22" height="22" class="theme-switch__icon">
-                <use href="assets/sprite.svg#icon-sun"></use>
-              </svg>
+              <button type="button" class="theme-switch__button" aria-pressed="true" aria-label="Light theme">
+                <svg width="22" height="22" class="theme-switch__icon" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-sun"></use>
+                </svg>
+              </button>
             </li>
             <li class="theme-switch__item">
-              <svg width="18" height="18" class="theme-switch__icon">
-                <use href="assets/sprite.svg#icon-moon"></use>
-              </svg>
+              <button type="button" class="theme-switch__button" aria-pressed="false" aria-label="Dark theme">
+                <svg width="18" height="18" class="theme-switch__icon" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-moon"></use>
+                </svg>
+              </button>
             </li>
           </ul>
         </div>
-        <button type="button" class="burger-button"></button>
+        <button
+          type="button"
+          class="burger-button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="navigation"
+        ></button>
       </div>
     </div>
   </header>
   <main>
-    <section class="menu">
+    <section class="menu" aria-labelledby="menu-title">
       <div class="container menu__container">
-        <h1 class="menu__title">
+        <h1 class="menu__title" id="menu-title">
           <span class="menu__title_text">Behind each of our cups hides an</span>
           <span class="menu__title_highlight">amazing surprise</span>
         </h1>
         <ul class="filter__list">
           <li class="filter__item filter__item_active">
             <button type="button" class="filter__button">
-              <span class="filter__icon">☕</span>
+              <span class="filter__icon" aria-hidden="true">☕</span>
               <span class="filter__text">Coffee</span>
             </button>
           </li>
           <li class="filter__item">
             <button type="button" class="filter__button">
-              <span class="filter__icon">🫖</span>
+              <span class="filter__icon" aria-hidden="true">🫖</span>
               <span class="filter__text">Tea</span>
             </button>
           </li>
           <li class="filter__item">
             <button type="button" class="filter__button">
-              <span class="filter__icon">🍰</span>
+              <span class="filter__icon" aria-hidden="true">🍰</span>
               <span class="filter__text">Dessert</span>
             </button>
           </li>
@@ -223,8 +233,8 @@
             </div>
           </li>
         </ul>
-        <button type="button" class="refresh-button">
-          <svg width="24" height="24" class="refresh-icon">
+        <button type="button" class="refresh-button" aria-label="Show more products">
+          <svg width="24" height="24" class="refresh-icon" aria-hidden="true" focusable="false">
             <use href="assets/sprite.svg#icon-refresh"></use>
           </svg>
         </button>
@@ -240,56 +250,57 @@
             <span class="offer__title_highlight">It’s coffee time!</span>
           </h2>
           <ul class="socials__list">
-          <li class="socials__item">
-            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="socials__link">
-              <svg class="socials__icon" width="24" height="24">
-                <use href="assets/sprite.svg#icon-twitter"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="socials__link">
-              <svg class="socials__icon" width="24" height="24">
-                <use href="assets/sprite.svg#icon-instagram"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="socials__link">
-              <svg class="socials__icon" width="24" height="24">
-                <use href="assets/sprite.svg#icon-facebook"></use>
-              </svg>
-            </a>
-          </li>
+            <li class="socials__item">
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="socials__link" aria-label="Coffee House on X">
+                <svg class="socials__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="socials__link" aria-label="Coffee House on Instagram">
+                <svg class="socials__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="socials__link" aria-label="Coffee House on Facebook">
+                <svg class="socials__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
         <address class="footer__contact">
           <p class="contact__title">Contact us</p>
-          <div class="contact__list">
-            <div class="contact__item">
+          <ul class="contact__list">
+            <li class="contact__item">
               <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="contact__link">
-                <svg class="contact__icon" width="20" height="20">
+                <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
                   <use href="assets/sprite.svg#icon-pin-alt"></use>
                 </svg>
                 <span class="contact__description">8558 Green Rd.,  LA</span>
               </a>
-          </div>
-          <div class="contact__item">
-            <a href="tel:+16035550123" class="contact__link">
-              <svg class="contact__icon" width="20" height="20">
-                <use href="assets/sprite.svg#icon-phone"></use>
+            </li>
+            <li class="contact__item">
+              <a href="tel:+16035550123" class="contact__link">
+                <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-phone"></use>
+                </svg>
+                <span class="contact__description">+1 (603) 555-0123</span>
+              </a>
+            </li>
+            <li class="contact__item">
+              <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                <use href="assets/sprite.svg#icon-clock"></use>
               </svg>
-              <span class="contact__description">+1 (603) 555-0123</span>
-            </a>
-          </div>
-          <div class="contact__item">
-            <svg class="contact__icon" width="20" height="20">
-              <use href="assets/sprite.svg#icon-clock"></use>
-            </svg>
-            <span class="contact__description">Mon–Sat: 9:00–23:00</span>
-          </div>
-        </div>
-      </address></div>
+              <span class="contact__description">Mon–Sat: 9:00–23:00</span>
+            </li>
+          </ul>
+        </address>
+      </div>
     </div>
   </footer>
 </body>
