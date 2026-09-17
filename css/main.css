@@ -50,7 +50,7 @@ a {
 }
 
 body {
-  padding: 20px 0;
+  padding-bottom: 20px;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   color: #403f3d;
@@ -58,7 +58,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   body {
-    padding: 40px 0;
+    padding-bottom: 40px;
   }
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 .header {
-  margin-bottom: 20px;
+  padding: 20px 0;
 }
 .header__container {
   position: relative;
@@ -132,6 +132,18 @@ body {
             justify-content: center;
   }
 }
+@media screen and (min-width: 1440px) {
+  .header .navigation {
+    position: static;
+    -webkit-transform: unset;
+            transform: unset;
+    padding: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
 .header .navigation__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,6 +156,15 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 60px;
+}
+@media screen and (min-width: 1440px) {
+  .header .navigation__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 40px;
+  }
 }
 .header .navigation__item {
   display: -webkit-box;
@@ -162,6 +183,13 @@ body {
   line-height: 1.25;
   text-align: center;
 }
+@media screen and (min-width: 1440px) {
+  .header .navigation__link {
+    padding: 16px 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
 .header .navigation .menu-link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -178,6 +206,14 @@ body {
   line-height: 1.25;
   text-align: center;
 }
+@media screen and (min-width: 1440px) {
+  .header .navigation .menu-link {
+    display: none;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
 .header .control {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,6 +226,11 @@ body {
 @media screen and (min-width: 768px) {
   .header .control {
     gap: 24px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .header .control {
+    margin-left: 44px;
   }
 }
 .header .theme-switch {
@@ -257,6 +298,11 @@ body {
   border: 1px solid #665f55;
   border-radius: 100px;
   outline: none;
+}
+@media screen and (min-width: 1440px) {
+  .header .burger-button {
+    display: none;
+  }
 }
 .header .burger-button::before, .header .burger-button::after {
   content: "";

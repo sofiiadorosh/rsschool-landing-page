@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 
 .header {
-  margin-bottom: 20px;
+  padding: 20px 0;
 
   &__container {
     position: relative;
@@ -30,11 +30,23 @@
       justify-content: center;
     }
 
+    @media screen and (min-width: 1440px) {
+      position: static;
+      transform: unset;
+      padding: 0;
+      flex-direction: row;
+    }
+
     &__list {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 60px;
+
+      @media screen and (min-width: 1440px) {
+        flex-direction: row;
+        gap: 40px;
+      }
     }
 
     &__item {
@@ -48,6 +60,12 @@
       font-size: 32px;
       line-height: 1.25;
       text-align: center;
+
+      @media screen and (min-width: 1440px) {
+        padding: 16px 0;
+        font-size: 16px;
+        line-height: 1.5;
+      }
     }
 
     .menu-link {
@@ -59,6 +77,14 @@
       font-size: 32px;
       line-height: 1.25;
       text-align: center;
+
+      @media screen and (min-width: 1440px) {
+        // TODO
+        display: none;
+        gap: 8px;
+        font-size: 16px;
+        line-height: 1.5;
+      }
     }
   }
 
@@ -69,6 +95,10 @@
 
     @media screen and (min-width: 768px) {
       gap: 24px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-left: 44px;
     }
   }
 
@@ -121,6 +151,10 @@
     border: 1px solid $inverse-border;
     border-radius: 100px;
     outline: none;
+
+    @media screen and (min-width: 1440px) {
+      display: none;
+    }
 
     &::before,
     &::after {
