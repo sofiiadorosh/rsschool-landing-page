@@ -41,6 +41,15 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    overflow: hidden;
+
+    @media (hover: hover) {
+      &:hover {
+        .resource__image {
+          transform: scale(1);
+        }
+      }
+    }
 
     &:nth-child(1) {
       @media screen and (min-width: 1440px) {
@@ -82,5 +91,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
+    transform: scale(1.1);
+    transition: transform 500ms $timing-function;
   }
 }
