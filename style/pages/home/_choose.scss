@@ -93,17 +93,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background: $primary-border;
       border-radius: 100px;
-    }
 
-    &__button {
-      width: 100%;
-      height: 100%;
-      padding: 0;
-      background: $inverse-border;
-      border: none;
-      border-radius: 100px;
-      outline: none;
+      &_active {
+        background: $inverse-border;
+      }
     }
   }
 
@@ -139,10 +134,27 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: $page-background;
+      background: transparent;
       border: 1px solid $inverse-border;
       border-radius: 100px;
       outline: none;
+      transition: background 250ms $timing-function, border-color 250ms $timing-function;
+
+      @media (hover: hover) {
+        &:hover {
+          background: $container-background;
+          border-color: none;
+          cursor: pointer;
+
+          .arrow__icon {
+            color: $inverse-text;
+          }
+        }
+      }
+    }
+
+    &__icon {
+      transition: color 250ms $timing-function;
     }
   }
 }
