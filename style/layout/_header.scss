@@ -255,4 +255,11 @@
       pointer-events: none;
     }
   }
+
+  &.menu {
+    .menu-link {
+      cursor: default;
+      pointer-events: none;
+    }
+  }
 }
