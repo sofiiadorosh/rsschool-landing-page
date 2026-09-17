@@ -1,0 +1,136 @@
+@use "../../abstracts/variables" as *;
+
+.menu {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.25;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      font-size: 60px;
+    }
+
+    &_highlight {
+      font-style: italic;
+      color: $accent-text;
+    }
+  }
+
+  .filter {
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+
+      &_active {
+        .filter__button {
+          color: $inverse-text;
+          background: $container-background;
+          border-color: transparent;
+        }
+
+        .filter__icon {
+          background: $page-background;
+        }
+      }
+    }
+
+    &__button {
+      padding: 8px 16px 8px 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.5;
+      color: $primary-text;
+      background: transparent;
+      border: 1px solid $primary-border;
+      border-radius: 100px;
+      outline: none;
+    }
+
+    &__icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $primary-border;
+      border-radius: 100px;
+    }
+  }
+
+  .product {
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    &__item {
+      width: 100%;
+      max-width: 310px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid $primary-border;
+      border-radius: 40px;
+    }
+
+    &__image {
+      border-radius: 40px;
+    }
+
+    &__box {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__name,
+    &__price {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    &__description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  .refresh-button {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 1px solid $inverse-border;
+    border-radius: 100px;
+    outline: none;
+  }
+}
