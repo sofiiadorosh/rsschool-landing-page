@@ -9,6 +9,8 @@
   }
 
   &__title {
+    width: 100%;
+    max-width: 800px;
     font-weight: 600;
     font-size: 32px;
     line-height: 1.25;
@@ -149,5 +151,9 @@
     border: 1px solid $inverse-border;
     border-radius: 100px;
     outline: none;
+
+    @media screen and (min-width: 1440px) {
+      display: none;
+    }
   }
 }

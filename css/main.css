@@ -1011,6 +1011,8 @@ main {
   gap: 40px;
 }
 .menu__title {
+  width: 100%;
+  max-width: 800px;
   font-weight: 600;
   font-size: 32px;
   line-height: 1.25;
@@ -1189,4 +1191,9 @@ main {
   border: 1px solid #665f55;
   border-radius: 100px;
   outline: none;
+}
+@media screen and (min-width: 1440px) {
+  .menu .refresh-button {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */
