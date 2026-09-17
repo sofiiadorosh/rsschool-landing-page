@@ -124,6 +124,14 @@ body {
   background: #e1d4c9;
   z-index: 1;
 }
+@media screen and (min-width: 768px) {
+  .header .navigation {
+    padding: 40px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 .header .navigation__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -178,6 +186,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 12px;
+}
+@media screen and (min-width: 768px) {
+  .header .control {
+    gap: 24px;
+  }
 }
 .header .theme-switch {
   padding: 3px;
