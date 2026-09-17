@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 769px) {
       justify-content: flex-start;
     }
   }
@@ -29,15 +29,7 @@
     background: $page-background;
     z-index: 1;
 
-    @media screen and (min-width: 768px) {
-      padding: 40px;
-      justify-content: center;
-    }
-
-    @media screen and (min-width: 1440px) {
-      // Drop the nav box so its children become flex items of
-      // .header__container — that lets `order` move the menu link
-      // past .control without duplicating it in the markup.
+    @media screen and (min-width: 769px) {
       display: contents;
     }
 
@@ -47,7 +39,7 @@
       align-items: center;
       gap: 60px;
 
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 769px) {
         margin: 0 auto;
         flex-direction: row;
         gap: 40px;
@@ -79,7 +71,7 @@
         transition: transform 500ms $timing-function;
       }
 
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 769px) {
         padding: 16px 0;
         font-size: 16px;
         line-height: 1.5;
@@ -117,7 +109,7 @@
         transition: transform 500ms $timing-function;
       }
 
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 769px) {
         order: 1;
         margin-left: 24px;
         padding: 16px 0;
@@ -138,7 +130,7 @@
         width: 40px;
         height: 40px;
 
-        @media screen and (min-width: 1440px) {
+        @media screen and (min-width: 769px) {
           width: 20px;
           height: 20px;
         }
@@ -151,11 +143,8 @@
     align-items: center;
     gap: 12px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 769px) {
       gap: 24px;
-    }
-
-    @media screen and (min-width: 1440px) {
       margin-left: 44px;
     }
   }
@@ -238,7 +227,7 @@
     border-radius: 100px;
     outline: none;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 769px) {
       display: none;
     }
 
