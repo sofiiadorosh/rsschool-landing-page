@@ -1328,8 +1328,31 @@ main {
   border: 1px solid #c1b6ad;
   border-radius: 40px;
 }
+@media (hover: hover) {
+  .menu .product__item:hover {
+    cursor: pointer;
+  }
+  .menu .product__item:hover .product__image {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.menu .product__image-box {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 40px;
+  overflow: hidden;
+}
 .menu .product__image {
   border-radius: 40px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu .product__box {
   width: 100%;
