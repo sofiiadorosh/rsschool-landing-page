@@ -69,13 +69,13 @@
       background: transparent;
       border: 1px solid $primary-border;
       border-radius: 100px;
-      transition: background 250ms $timing-function, border 250ms $timing-function;
+      transition: background 250ms $timing-function, border-color 250ms $timing-function;
 
 
       @media (hover: hover) {
         &:hover {
           background: $page-background;
-          border: transparent;
+          border-color: transparent;
 
           .socials__icon {
             color: $primary-text;
