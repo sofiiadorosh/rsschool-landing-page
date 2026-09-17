@@ -273,6 +273,10 @@
     .menu-link {
       cursor: default;
       pointer-events: none;
+
+      &::before {
+        transform: scale(1.1);
+      }
     }
   }
 }
