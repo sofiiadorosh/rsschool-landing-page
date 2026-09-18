@@ -7,6 +7,16 @@
   width: 100%;
   height: 100%;
   background: $overlay-background;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms $timing-function, visibility 250ms $timing-function;
+
+  &.opened {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
 
   .modal {
     position: absolute;
@@ -14,15 +24,22 @@
     left: 50%;
     width: 90%;
     max-width: 688px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1.1);
     padding: 16px;
     display: flex;
     gap: 20px;
     background: $page-background;
     border-radius: 40px;
+    opacity: 0;
+    transition: transform 250ms $timing-function, opacity 250ms $timing-function;
 
     @media screen and (min-width: 768px) {
       max-width: 800px;
+    }
+
+    .overlay.opened & {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
     }
 
     &__image-box {
