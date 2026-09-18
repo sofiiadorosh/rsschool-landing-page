@@ -57,6 +57,16 @@
       border: 1px solid $inverse-border;
       border-radius: 100px;
       outline: none;
+      transition: color 250ms $timing-function, background 250ms $timing-function, border-color 250ms $timing-function;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $inverse-text;
+          background: $container-background;
+          border-color: transparent;
+          cursor: pointer;
+        }
+      }
     }
   }
 
@@ -107,10 +117,13 @@
       line-height: 1.5;
       border: 1px solid $primary-border;
       border-radius: 100px;
+      transition: background 250ms $timing-function, border-color 250ms $timing-function;
 
       &_active {
         background: $container-background;
         border-color: transparent;
+        cursor: default;
+        pointer-events: none;
 
         .size__icon,
         .additive__icon {
@@ -120,6 +133,24 @@
         .size__text,
         .additive__text {
           color: $inverse-text;
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background: $container-background;
+          border-color: transparent;
+          cursor: pointer;
+
+          .size__icon,
+          .additive__icon {
+            background: $page-background;
+          }
+
+          .size__text,
+          .additive__text {
+            color: $inverse-text;
+          }
         }
       }
     }
@@ -132,10 +163,12 @@
       align-items: center;
       background: $primary-border;
       border-radius: 100px;
+      transition: background 250ms $timing-function;
     }
 
     &__text {
       color: $primary-text;
+      transition: color 250ms $timing-function;
     }
   }
 

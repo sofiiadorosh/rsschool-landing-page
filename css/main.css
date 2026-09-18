@@ -684,6 +684,16 @@ main {
   border: 1px solid #665f55;
   border-radius: 100px;
   outline: none;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (hover: hover) {
+  .overlay .modal__button:hover {
+    color: #e1d4c9;
+    background: #665f55;
+    border-color: transparent;
+    cursor: pointer;
+  }
 }
 .overlay .product {
   display: -webkit-box;
@@ -749,11 +759,15 @@ main {
   line-height: 1.5;
   border: 1px solid #c1b6ad;
   border-radius: 100px;
+  -webkit-transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .overlay .size__item_active,
 .overlay .additive__item_active {
   background: #665f55;
   border-color: transparent;
+  cursor: default;
+  pointer-events: none;
 }
 .overlay .size__item_active .size__icon,
 .overlay .size__item_active .additive__icon,
@@ -766,6 +780,26 @@ main {
 .overlay .additive__item_active .size__text,
 .overlay .additive__item_active .additive__text {
   color: #e1d4c9;
+}
+@media (hover: hover) {
+  .overlay .size__item:hover,
+  .overlay .additive__item:hover {
+    background: #665f55;
+    border-color: transparent;
+    cursor: pointer;
+  }
+  .overlay .size__item:hover .size__icon,
+  .overlay .size__item:hover .additive__icon,
+  .overlay .additive__item:hover .size__icon,
+  .overlay .additive__item:hover .additive__icon {
+    background: #e1d4c9;
+  }
+  .overlay .size__item:hover .size__text,
+  .overlay .size__item:hover .additive__text,
+  .overlay .additive__item:hover .size__text,
+  .overlay .additive__item:hover .additive__text {
+    color: #e1d4c9;
+  }
 }
 .overlay .size__icon,
 .overlay .additive__icon {
@@ -782,10 +816,14 @@ main {
           align-items: center;
   background: #c1b6ad;
   border-radius: 100px;
+  -webkit-transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .overlay .size__text,
 .overlay .additive__text {
   color: #403f3d;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .overlay .total {
   display: -webkit-box;
