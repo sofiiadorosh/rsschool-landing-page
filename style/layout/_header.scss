@@ -169,25 +169,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: transparent;
       border-radius: 100px;
-      transition: background 250ms $timing-function;
-
-      @media (hover: hover) {
-        &:hover {
-          background: $inverse-border;
-          cursor: pointer;
-
-          .theme-switch__icon {
-            color: $inverse-text;
-          }
-        }
-      }
 
       &_active {
-        background: $accent-text;
-        cursor: default;
-        pointer-events: none;
+        .theme-switch__button {
+          background: $accent-text;
+          cursor: default;
+          pointer-events: none;
+        }
 
         .theme-switch__icon {
           color: $inverse-text;
@@ -206,6 +195,18 @@
       border: none;
       border-radius: 100px;
       outline: none;
+      transition: background 250ms $timing-function;
+
+      @media (hover: hover) {
+        &:hover {
+          background: $container-background;
+          cursor: pointer;
+
+          .theme-switch__icon {
+            color: $inverse-text;
+          }
+        }
+      }
     }
 
     &__icon {

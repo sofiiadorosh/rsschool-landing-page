@@ -1,0 +1,12 @@
+@use './variables' as *;
+
+body.theme-dark {
+  --primary-text: #{$dark-primary-text};
+  --inverse-text: #{$dark-inverse-text};
+  --accent-text: #{$dark-accent-text};
+  --page-background: #{$dark-page-background};
+  --container-background: #{$dark-container-background};
+  --overlay-background: #{$dark-overlay-background};
+  --primary-border: #{$dark-primary-border};
+  --inverse-border: #{$dark-inverse-border};
+}
