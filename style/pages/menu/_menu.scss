@@ -190,7 +190,7 @@
     outline: none;
     transition: background 250ms $timing-function, border-color 250ms $timing-function;
 
-    @media screen and (min-width: 1440px) {
+    &[hidden] {
       display: none;
     }
 
@@ -207,6 +207,7 @@
     }
 
     .refresh-icon {
+      color: $primary-text;
       transition: color 250ms $timing-function;
     }
   }

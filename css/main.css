@@ -1717,10 +1717,8 @@ main {
   -webkit-transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media screen and (min-width: 1440px) {
-  .menu .refresh-button {
-    display: none;
-  }
+.menu .refresh-button[hidden] {
+  display: none;
 }
 @media (hover: hover) {
   .menu .refresh-button:hover {
@@ -1733,6 +1731,7 @@ main {
   }
 }
 .menu .refresh-button .refresh-icon {
+  color: var(--primary-text);
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }/*# sourceMappingURL=main.css.map */
