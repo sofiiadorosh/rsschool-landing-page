@@ -666,6 +666,11 @@ main {
   visibility: visible;
   pointer-events: all;
 }
+.overlay.opened .modal {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
 .overlay .modal {
   position: absolute;
   top: 50%;
@@ -691,11 +696,6 @@ main {
   .overlay .modal {
     max-width: 800px;
   }
-}
-.overlay.opened .overlay .modal {
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
 }
 .overlay .modal__image-box {
   display: none;
@@ -729,6 +729,7 @@ main {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
+  color: var(--inverse-text);
   background: transparent;
   border: 1px solid var(--inverse-border);
   border-radius: 100px;

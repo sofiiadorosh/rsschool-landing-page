@@ -1,5 +1,6 @@
-const PRODUCTS_URL = "./assets/products.json";
-const IMAGES_PATH = "./assets/webp/";
+import { PRODUCTS_URL, IMAGES_PATH } from "./constants.js";
+import { initModal, openModal } from "./modal.js";
+
 const ACTIVE_ITEM_CLASS = "filter__item_active";
 const DEFAULT_CATEGORY = "coffee";
 const COLLAPSED_CARDS_COUNT = 4;
@@ -86,7 +87,9 @@ function onFilterChange(event) {
 }
 
 function onShowMoreClick() {
-  const hiddenProducts = getCategoryProducts().slice(productList.children.length);
+  const hiddenProducts = getCategoryProducts().slice(
+    productList.children.length
+  );
 
   isExpanded = true;
 
@@ -95,6 +98,20 @@ function onShowMoreClick() {
     hiddenProducts.map(createProductMarkup).join("")
   );
   showMoreButton.hidden = true;
+}
+
+function onProductListClick(event) {
+  const card = event.target.closest(".product__item");
+
+  if (!card) {
+    return;
+  }
+
+  const product = products.find(({ id }) => id === Number(card.dataset.id));
+
+  if (product) {
+    openModal(product);
+  }
 }
 
 async function initMenu() {
@@ -117,9 +134,11 @@ async function initMenu() {
 
   setActiveFilter(activeCategory);
   renderProducts();
+  initModal();
 
   filterList.addEventListener("click", onFilterChange);
   showMoreButton.addEventListener("click", onShowMoreClick);
+  productList.addEventListener("click", onProductListClick);
   desktopQuery.addEventListener("change", renderProducts);
 }
 
