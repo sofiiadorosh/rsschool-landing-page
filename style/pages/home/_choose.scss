@@ -1,0 +1,161 @@
+@use "../../abstracts/variables" as *;
+
+.choose {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.25;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      font-size: 60px;
+    }
+
+    &_highlight {
+      font-style: italic;
+      color: $accent-text;
+    }
+  }
+
+  &__slider-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__slider {
+    width: 100%;
+    max-width: 480px;
+    overflow: hidden;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .bullet {
+    &__list {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    &__item {
+      width: 40px;
+      height: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $primary-border;
+      border-radius: 100px;
+
+      &_active {
+        background: $inverse-border;
+      }
+    }
+  }
+
+  .arrow {
+    &__list {
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 44px;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &__item {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+    }
+
+    &__button {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border: 1px solid $inverse-border;
+      border-radius: 100px;
+      outline: none;
+      transition: background 250ms $timing-function, border-color 250ms $timing-function;
+
+      @media (hover: hover) {
+        &:hover {
+          background: $container-background;
+          border-color: transparent;
+          cursor: pointer;
+
+          .arrow__icon {
+            color: $inverse-text;
+          }
+        }
+      }
+    }
+
+    &__icon {
+      color: $primary-text;
+      transition: color 250ms $timing-function;
+    }
+  }
+}

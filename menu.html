@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffe House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <header class="header menu">
+    <div class="container header__container">
+      <a href="./index.html" class="logo" aria-label="Coffee House, home">
+        <svg width="100" height="60" class="logo__icon" aria-hidden="true" focusable="false">
+          <use href="assets/sprite.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <nav id="navigation" class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="./index.html#favorite-coffee" class="navigation__link">Favorite coffee</a>
+          </li>
+          <li class="navigation__item">
+            <a href="./index.html#about" class="navigation__link">About</a>
+          </li>
+          <li class="navigation__item">
+            <a href="./index.html#mobile-app" class="navigation__link">Mobile app</a>
+          </li>
+          <li class="navigation__item">
+            <a href="./index.html#contact-us" class="navigation__link">Contact us</a>
+          </li>
+        </ul>
+        <a href="./menu.html" class="menu-link">
+          <span>Menu</span>
+          <svg class="menu-link__icon" aria-hidden="true" focusable="false">
+            <use href="assets/sprite.svg#icon-coffee-cup"></use>
+          </svg>
+        </a>
+      </nav>
+      <div class="control">
+        <div class="theme-switch">
+          <ul class="theme-switch__list">
+            <li class="theme-switch__item theme-switch__item_active">
+              <button type="button" class="theme-switch__button" aria-pressed="true" aria-label="Light theme" data-theme="light">
+                <svg width="22" height="22" class="theme-switch__icon" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-sun"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="theme-switch__item">
+              <button type="button" class="theme-switch__button" aria-pressed="false" aria-label="Dark theme" data-theme="dark">
+                <svg width="18" height="18" class="theme-switch__icon" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-moon"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <button
+          type="button"
+          class="burger-button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="navigation"
+        ></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="menu" aria-labelledby="menu-title">
+      <div class="container menu__container">
+        <h1 class="menu__title" id="menu-title">
+          <span class="menu__title_text">Behind each of our cups hides an</span>
+          <span class="menu__title_highlight">amazing surprise</span>
+        </h1>
+        <ul class="filter__list">
+          <li class="filter__item filter__item_active">
+            <button type="button" class="filter__button" data-category="coffee" aria-pressed="true">
+              <span class="filter__icon" aria-hidden="true">☕</span>
+              <span class="filter__text">Coffee</span>
+            </button>
+          </li>
+          <li class="filter__item">
+            <button type="button" class="filter__button" data-category="tea" aria-pressed="false">
+              <span class="filter__icon" aria-hidden="true">🫖</span>
+              <span class="filter__text">Tea</span>
+            </button>
+          </li>
+          <li class="filter__item">
+            <button type="button" class="filter__button" data-category="dessert" aria-pressed="false">
+              <span class="filter__icon" aria-hidden="true">🍰</span>
+              <span class="filter__text">Dessert</span>
+            </button>
+          </li>
+        </ul>
+        <ul class="product__list"></ul>
+        <button type="button" class="refresh-button" aria-label="Show more products">
+          <svg width="24" height="24" class="refresh-icon" aria-hidden="true" focusable="false">
+            <use href="assets/sprite.svg#icon-refresh"></use>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__content">
+        <div class="footer__offer">
+          <h2 class="offer__title">
+            <span>Sip, Savor, Smile.</span>
+            <span class="offer__title_highlight">It’s coffee time!</span>
+          </h2>
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="socials__link" aria-label="Coffee House on X">
+                <svg class="socials__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="socials__link" aria-label="Coffee House on Instagram">
+                <svg class="socials__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="socials__link" aria-label="Coffee House on Facebook">
+                <svg class="socials__icon" width="24" height="24" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <address class="footer__contact">
+          <p class="contact__title">Contact us</p>
+          <ul class="contact__list">
+            <li class="contact__item">
+              <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="contact__link">
+                <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-pin-alt"></use>
+                </svg>
+                <span class="contact__description">8558 Green Rd.,  LA</span>
+              </a>
+            </li>
+            <li class="contact__item">
+              <a href="tel:+16035550123" class="contact__link">
+                <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                  <use href="assets/sprite.svg#icon-phone"></use>
+                </svg>
+                <span class="contact__description">+1 (603) 555-0123</span>
+              </a>
+            </li>
+            <li class="contact__item">
+              <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                <use href="assets/sprite.svg#icon-clock"></use>
+              </svg>
+              <span class="contact__description">Mon–Sat: 9:00–23:00</span>
+            </li>
+          </ul>
+        </address>
+      </div>
+    </div>
+  </footer>
+  <div class="overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal__image-box">
+        <img
+          src="./assets/webp/irish-coffee.webp"
+          alt=""
+          class="modal__image"
+          width="680"
+          height="680"
+          loading="lazy"
+          />
+      </div>
+      <div class="modal__content">
+        <div class="product">
+          <h2 class="product__name" id="modal-title">Irish coffee</h2>
+          <p class="product__description">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+        </div>
+        <div class="size">
+          <h3 class="size__name">Size</h3>
+          <ul class="size__list">
+            <li class="size__item size__item_active">
+              <span class="size__icon">S</span>
+              <span class="size__text">200 ml</span>
+            </li>
+            <li class="size__item">
+              <span class="size__icon">M</span>
+              <span class="size__text">300 ml</span>
+            </li>
+            <li class="size__item">
+              <span class="size__icon">L</span>
+              <span class="size__text">400 ml</span>
+            </li>
+          </ul>
+        </div>
+        <div class="additive">
+          <h3 class="additive__name">Additives</h3>
+          <ul class="additive__list">
+            <li class="additive__item">
+              <span class="additive__icon">1</span>
+              <span class="additive__text">Sugar</span>
+            </li>
+            <li class="additive__item">
+              <span class="additive__icon">2</span>
+              <span class="additive__text">Cinnamon</span>
+            </li>
+            <li class="additive__item">
+              <span class="additive__icon">3</span>
+              <span class="additive__text">Syrup</span>
+            </li>
+          </ul>
+        </div>
+        <div class="total">
+          <span class="total__name">Total:</span>
+          <span class="total__number">$7.00</span>
+        </div>
+        <div class="alert">
+          <svg width="16" height="16" class="alert__icon" aria-hidden="true" focusable="false">
+            <use href="assets/sprite.svg#icon-info"></use>
+          </svg>
+          <p class="alert__description">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+        </div>
+        <button type="button" class="modal__button">Close</button>
+      </div>
+    </div>
+  </div>
+  <script src="./js/theme.js" type="module"></script>
+  <script src="./js/burger.js" type="module"></script>
+  <script src="./js/menu.js" type="module"></script>
+</body>
+</html>
