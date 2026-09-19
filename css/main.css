@@ -816,8 +816,6 @@ main {
 .overlay .additive__item_active {
   background: var(--container-background);
   border-color: transparent;
-  cursor: default;
-  pointer-events: none;
 }
 .overlay .size__item_active .size__icon,
 .overlay .size__item_active .additive__icon,
@@ -874,6 +872,10 @@ main {
   color: var(--primary-text);
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.overlay .size__item_active {
+  cursor: default;
+  pointer-events: none;
 }
 .overlay .total {
   display: -webkit-box;

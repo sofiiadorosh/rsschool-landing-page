@@ -9,13 +9,16 @@ const modalAdditiveList = overlay?.querySelector(".additive__list");
 const modalTotal = overlay?.querySelector(".total__number");
 const modalCloseButton = overlay?.querySelector(".modal__button");
 
+const selectedAdditives = new Set();
 let lastFocusedElement = null;
+let currentProduct = null;
+let selectedSize = null;
 
-function createSizeMarkup([key, { size }], index) {
-  const activeClass = index === 0 ? " size__item_active" : "";
+function createSizeMarkup([key, { size }]) {
+  const activeClass = key === selectedSize ? " size__item_active" : "";
 
   return `
-    <li class="size__item${activeClass}">
+    <li class="size__item${activeClass}" data-size="${key}">
       <span class="size__icon">${key.toUpperCase()}</span>
       <span class="size__text">${size}</span>
     </li>
@@ -24,18 +27,73 @@ function createSizeMarkup([key, { size }], index) {
 
 function createAdditiveMarkup({ name }, index) {
   return `
-    <li class="additive__item">
+    <li class="additive__item" data-additive="${index}">
       <span class="additive__icon">${index + 1}</span>
       <span class="additive__text">${name}</span>
     </li>
   `;
 }
 
+function getTotalPrice() {
+  const sizePrice = currentProduct.sizes[selectedSize]["add-price"];
+  const additivesPrice = [...selectedAdditives].reduce(
+    (sum, index) => sum + Number(currentProduct.additives[index]["add-price"]),
+    0
+  );
+
+  return (
+    Number(currentProduct.price) +
+    Number(sizePrice) +
+    additivesPrice
+  ).toFixed(2);
+}
+
+function updateTotal() {
+  modalTotal.textContent = `$${getTotalPrice()}`;
+}
+
+function onSizeListClick(event) {
+  const item = event.target.closest(".size__item");
+
+  if (!item) {
+    return;
+  }
+
+  selectedSize = item.dataset.size;
+
+  modalSizeList.querySelectorAll(".size__item").forEach((element) => {
+    element.classList.toggle("size__item_active", element === item);
+  });
+  updateTotal();
+}
+
+function onAdditiveListClick(event) {
+  const item = event.target.closest(".additive__item");
+
+  if (!item) {
+    return;
+  }
+
+  const index = Number(item.dataset.additive);
+  const isSelected = item.classList.toggle("additive__item_active");
+
+  if (isSelected) {
+    selectedAdditives.add(index);
+  } else {
+    selectedAdditives.delete(index);
+  }
+
+  updateTotal();
+}
+
 function fillModal(product) {
+  currentProduct = product;
+  selectedSize = Object.keys(product.sizes)[0];
+  selectedAdditives.clear();
+
   modalImage.src = `${IMAGES_PATH}${product.image}`;
   modalName.textContent = product.name;
   modalDescription.textContent = product.description;
-  modalTotal.textContent = `$${product.price}`;
 
   modalSizeList.innerHTML = Object.entries(product.sizes)
     .map(createSizeMarkup)
@@ -43,6 +101,8 @@ function fillModal(product) {
   modalAdditiveList.innerHTML = product.additives
     .map(createAdditiveMarkup)
     .join("");
+
+  updateTotal();
 }
 
 function lockScroll() {
@@ -100,4 +160,6 @@ export function initModal() {
 
   overlay.addEventListener("click", onOverlayClick);
   modalCloseButton.addEventListener("click", closeModal);
+  modalSizeList.addEventListener("click", onSizeListClick);
+  modalAdditiveList.addEventListener("click", onAdditiveListClick);
 }

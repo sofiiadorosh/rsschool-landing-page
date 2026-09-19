@@ -140,8 +140,6 @@
       &_active {
         background: $container-background;
         border-color: transparent;
-        cursor: default;
-        pointer-events: none;
 
         .size__icon,
         .additive__icon {
@@ -188,6 +186,11 @@
       color: $primary-text;
       transition: color 250ms $timing-function;
     }
+  }
+
+  .size__item_active {
+    cursor: default;
+    pointer-events: none;
   }
 
   .total {
