@@ -281,12 +281,16 @@
 
   &.menu {
     .menu-link {
-      @media screen and (min-width: 769px) {
-        cursor: default;
-        pointer-events: none;
+      cursor: default;
+      pointer-events: none;
 
+      &::before {
+        bottom: -4px;
+        transform: scale(1.1);
+      }
+      @media screen and (min-width: 769px) {
         &::before {
-          transform: scale(1.1);
+          bottom: 12px;
         }
       }
     }
