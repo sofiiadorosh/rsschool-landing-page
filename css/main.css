@@ -471,14 +471,18 @@ main {
   cursor: default;
   pointer-events: none;
 }
+.header.menu .menu-link {
+  cursor: default;
+  pointer-events: none;
+}
+.header.menu .menu-link::before {
+  bottom: -4px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
 @media screen and (min-width: 769px) {
-  .header.menu .menu-link {
-    cursor: default;
-    pointer-events: none;
-  }
   .header.menu .menu-link::before {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    bottom: 12px;
   }
 }
 
