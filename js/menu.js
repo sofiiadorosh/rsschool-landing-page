@@ -21,12 +21,12 @@ function createProductMarkup({ id, name, description, price, image }) {
       <div class="product__image-box">
         <img
           src="${IMAGES_PATH}${image}"
-          alt=""
+          alt="${name}"
           class="product__image"
           width="680"
           height="680"
           loading="lazy"
-        />
+        >
       </div>
       <div class="product__box">
         <h2 class="product__name">${name}</h2>
