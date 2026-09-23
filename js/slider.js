@@ -38,7 +38,7 @@ function onTouchStart(event) {
 }
 
 function onTouchMove(event) {
-  if (!touchStartX) {
+  if (touchStartX === null) {
     return;
   }
 
@@ -57,7 +57,7 @@ function onTouchMove(event) {
 }
 
 function onTouchEnd(event) {
-  if (!touchStartX) {
+  if (touchStartX === null) {
     return;
   }
 
