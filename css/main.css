@@ -939,6 +939,7 @@ main {
   width: 100%;
   max-width: 480px;
   overflow: hidden;
+  touch-action: pan-y;
 }
 .choose__list {
   display: flex;
