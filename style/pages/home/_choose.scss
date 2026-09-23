@@ -41,6 +41,7 @@
 
   &__list {
     display: flex;
+    transition: transform 500ms $timing-function;
   }
 
   &__item {
