@@ -8,25 +8,75 @@ const bullets = [...document.querySelectorAll(".bullet__item")];
 const [previousButton, nextButton] = document.querySelectorAll(".arrow__button");
 
 let currentIndex = 0;
+let position = 1;
+let isAnimating = false;
 let touchStartX = null;
 let touchStartY = null;
 let swipeDirection = null;
 
+function setTrackPosition(nextPosition, animate = true) {
+  position = nextPosition;
+  track.style.transition = animate ? "" : "none";
+  track.style.transform = `translateX(-${position * 100}%)`;
+
+  if (!animate) {
+    track.getBoundingClientRect();
+    track.style.transition = "";
+  }
+}
+
+function hasTransition() {
+  return parseFloat(getComputedStyle(track).transitionDuration) > 0;
+}
+
 function showSlide(index) {
-  currentIndex = index;
-  track.style.transform = `translateX(-${index * 100}%)`;
+  if (isAnimating) {
+    return;
+  }
+
+  const nextPosition = index + 1;
+
+  currentIndex = (index + slides.length) % slides.length;
 
   bullets.forEach((bullet, bulletIndex) => {
-    bullet.classList.toggle(ACTIVE_BULLET_CLASS, bulletIndex === index);
+    bullet.classList.toggle(ACTIVE_BULLET_CLASS, bulletIndex === currentIndex);
   });
+
+  if (!hasTransition()) {
+    setTrackPosition(currentIndex + 1, false);
+    return;
+  }
+
+  isAnimating = true;
+  setTrackPosition(nextPosition);
+}
+
+function onTransitionEnd(event) {
+  if (event.target !== track || event.propertyName !== "transform") {
+    return;
+  }
+
+  isAnimating = false;
+
+  if (position === 0 || position === slides.length + 1) {
+    setTrackPosition(currentIndex + 1, false);
+  }
 }
 
 function onPreviousClick() {
-  showSlide((currentIndex - 1 + slides.length) % slides.length);
+  showSlide(currentIndex - 1);
 }
 
 function onNextClick() {
-  showSlide((currentIndex + 1) % slides.length);
+  showSlide(currentIndex + 1);
+}
+
+function createClone(slide) {
+  const clone = slide.cloneNode(true);
+
+  clone.setAttribute("aria-hidden", "true");
+
+  return clone;
 }
 
 function onTouchStart(event) {
@@ -84,8 +134,11 @@ function initSlider() {
     return;
   }
 
-  showSlide(currentIndex);
+  track.prepend(createClone(slides[slides.length - 1]));
+  track.append(createClone(slides[0]));
+  setTrackPosition(position, false);
 
+  track.addEventListener("transitionend", onTransitionEnd);
   previousButton.addEventListener("click", onPreviousClick);
   nextButton.addEventListener("click", onNextClick);
   slider.addEventListener("touchstart", onTouchStart, { passive: true });

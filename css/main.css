@@ -17,7 +17,7 @@
   --dark-inverse-border: #c1b6ad;
 }
 
-body.theme-dark {
+:root.theme-dark {
   --primary-text: var(--dark-primary-text);
   --inverse-text: var(--dark-inverse-text);
   --accent-text: var(--dark-accent-text);
