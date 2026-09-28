@@ -1,6 +1,6 @@
 @use './variables' as *;
 
-body.theme-dark {
+:root.theme-dark {
   --primary-text: #{$dark-primary-text};
   --inverse-text: #{$dark-inverse-text};
   --accent-text: #{$dark-accent-text};
