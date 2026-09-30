@@ -34,7 +34,7 @@
     padding: 16px;
     display: flex;
     gap: 20px;
-    background: $page-background;
+    background: $modal-background;
     border-radius: 40px;
     opacity: 0;
     transition: transform 250ms $timing-function, opacity 250ms $timing-function;
@@ -140,12 +140,12 @@
       transition: background 250ms $timing-function, border-color 250ms $timing-function;
 
       &_active {
-        background: $container-background;
+        background: $tab-background;
         border-color: transparent;
 
         .size__icon,
         .additive__icon {
-          background: $page-background;
+          background: $modal-background;
         }
 
         .size__text,
@@ -156,13 +156,13 @@
 
       @media (hover: hover) {
         &:hover {
-          background: $container-background;
+          background: $tab-background;
           border-color: transparent;
           cursor: pointer;
 
           .size__icon,
           .additive__icon {
-            background: $page-background;
+            background: $modal-background;
           }
 
           .size__text,

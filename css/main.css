@@ -4,14 +4,18 @@
   --accent-text: #b0907a;
   --page-background: #e1d4c9;
   --container-background: #665f55;
+  --modal-background: #e1d4c9;
+  --tab-background: #665f55;
   --overlay-background: rgba(64, 63, 61, 0.8);
   --primary-border: #c1b6ad;
   --inverse-border: #665f55;
   --dark-primary-text: #e1d4c9;
   --dark-inverse-text: #e1d4c9;
   --dark-accent-text: #b0907a;
-  --dark-page-background: rgba(41, 40, 38, 1);
-  --dark-container-background: rgb(64, 63, 61);
+  --dark-page-background: #292826;
+  --dark-container-background: #403f3d;
+  --dark-modal-background: #403f3d;
+  --dark-tab-background: #292826;
   --dark-overlay-background: rgba(41, 40, 38, 0.8);
   --dark-primary-border: #665f55;
   --dark-inverse-border: #c1b6ad;
@@ -23,6 +27,8 @@
   --accent-text: var(--dark-accent-text);
   --page-background: var(--dark-page-background);
   --container-background: var(--dark-container-background);
+  --modal-background: var(--dark-modal-background);
+  --tab-background: var(--dark-tab-background);
   --overlay-background: var(--dark-overlay-background);
   --primary-border: var(--dark-primary-border);
   --inverse-border: var(--dark-inverse-border);
@@ -714,7 +720,7 @@ main {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
-  background: var(--page-background);
+  background: var(--modal-background);
   border-radius: 40px;
   opacity: 0;
   -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -845,14 +851,14 @@ main {
 }
 .overlay .size__item_active,
 .overlay .additive__item_active {
-  background: var(--container-background);
+  background: var(--tab-background);
   border-color: transparent;
 }
 .overlay .size__item_active .size__icon,
 .overlay .size__item_active .additive__icon,
 .overlay .additive__item_active .size__icon,
 .overlay .additive__item_active .additive__icon {
-  background: var(--page-background);
+  background: var(--modal-background);
 }
 .overlay .size__item_active .size__text,
 .overlay .size__item_active .additive__text,
@@ -863,7 +869,7 @@ main {
 @media (hover: hover) {
   .overlay .size__item:hover,
   .overlay .additive__item:hover {
-    background: var(--container-background);
+    background: var(--tab-background);
     border-color: transparent;
     cursor: pointer;
   }
@@ -871,7 +877,7 @@ main {
   .overlay .size__item:hover .additive__icon,
   .overlay .additive__item:hover .size__icon,
   .overlay .additive__item:hover .additive__icon {
-    background: var(--page-background);
+    background: var(--modal-background);
   }
   .overlay .size__item:hover .size__text,
   .overlay .size__item:hover .additive__text,
