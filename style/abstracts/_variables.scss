@@ -7,6 +7,8 @@ $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --accent-text: #b0907a;
   --page-background: #e1d4c9;
   --container-background: #665f55;
+  --modal-background: #e1d4c9;
+  --tab-background: #665f55;
   --overlay-background: rgba(64, 63, 61, 0.8);
   --primary-border: #c1b6ad;
   --inverse-border: #665f55;
@@ -14,8 +16,10 @@ $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --dark-primary-text: #e1d4c9;
   --dark-inverse-text: #e1d4c9;
   --dark-accent-text: #b0907a;
-  --dark-page-background: rgba(41, 40, 38, 1);
-  --dark-container-background: rgb(64, 63, 61);
+  --dark-page-background: #292826;
+  --dark-container-background: #403f3d;
+  --dark-modal-background: #403f3d;
+  --dark-tab-background: #292826;
   --dark-overlay-background: rgba(41, 40, 38, 0.8);
   --dark-primary-border: #665f55;
   --dark-inverse-border: #c1b6ad;
@@ -27,6 +31,8 @@ $accent-text: var(--accent-text);
 
 $page-background: var(--page-background);
 $container-background: var(--container-background);
+$modal-background: var(--modal-background);
+$tab-background: var(--tab-background);
 $overlay-background: var(--overlay-background);
 
 $primary-border: var(--primary-border);
@@ -38,6 +44,8 @@ $dark-accent-text: var(--dark-accent-text);
 
 $dark-page-background: var(--dark-page-background);
 $dark-container-background: var(--dark-container-background);
+$dark-modal-background: var(--dark-modal-background);
+$dark-tab-background: var(--dark-tab-background);
 $dark-overlay-background: var(--dark-overlay-background);
 
 $dark-primary-border: var(--dark-primary-border);
