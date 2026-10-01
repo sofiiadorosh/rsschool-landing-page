@@ -38,6 +38,7 @@
     max-width: 480px;
     overflow: hidden;
     touch-action: pan-y;
+    user-select: none;
   }
 
   &__list {

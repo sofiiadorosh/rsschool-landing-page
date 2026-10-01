@@ -1241,6 +1241,10 @@ main {
   overflow: hidden;
   -ms-touch-action: pan-y;
       touch-action: pan-y;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .choose__list {
   display: -webkit-box;
