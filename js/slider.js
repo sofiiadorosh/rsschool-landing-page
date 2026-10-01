@@ -10,8 +10,8 @@ const [previousButton, nextButton] = document.querySelectorAll(".arrow__button")
 let currentIndex = 0;
 let position = 1;
 let isAnimating = false;
-let touchStartX = null;
-let touchStartY = null;
+let pointerStartX = null;
+let pointerStartY = null;
 let swipeDirection = null;
 
 function setTrackPosition(nextPosition, animate = true) {
@@ -79,43 +79,50 @@ function createClone(slide) {
   return clone;
 }
 
-function onTouchStart(event) {
-  const touch = event.changedTouches[0];
-
-  touchStartX = touch.clientX;
-  touchStartY = touch.clientY;
+function resetSwipe() {
+  pointerStartX = null;
+  pointerStartY = null;
   swipeDirection = null;
 }
 
-function onTouchMove(event) {
-  if (touchStartX === null) {
+function onPointerDown(event) {
+  if (event.pointerType === "mouse" && event.button !== 0) {
     return;
   }
 
-  const touch = event.changedTouches[0];
-  const distanceX = touch.clientX - touchStartX;
-  const distanceY = touch.clientY - touchStartY;
+  pointerStartX = event.clientX;
+  pointerStartY = event.clientY;
+  swipeDirection = null;
+  slider.setPointerCapture(event.pointerId);
+}
+
+function onPointerMove(event) {
+  if (pointerStartX === null) {
+    return;
+  }
+
+  const distanceX = event.clientX - pointerStartX;
+  const distanceY = event.clientY - pointerStartY;
 
   if (!swipeDirection && (distanceX || distanceY)) {
     swipeDirection =
       Math.abs(distanceX) > Math.abs(distanceY) ? "horizontal" : "vertical";
   }
 
-  if (swipeDirection === "horizontal" && event.cancelable) {
+  if (swipeDirection === "horizontal" && event.pointerType === "mouse") {
     event.preventDefault();
   }
 }
 
-function onTouchEnd(event) {
-  if (touchStartX === null) {
+function onPointerUp(event) {
+  if (pointerStartX === null) {
     return;
   }
 
-  const distance = event.changedTouches[0].clientX - touchStartX;
+  const distance = event.clientX - pointerStartX;
   const wasHorizontal = swipeDirection === "horizontal";
 
-  touchStartX = null;
-  swipeDirection = null;
+  resetSwipe();
 
   if (!wasHorizontal || Math.abs(distance) < SWIPE_THRESHOLD) {
     return;
@@ -127,6 +134,10 @@ function onTouchEnd(event) {
   }
 
   onPreviousClick();
+}
+
+function onDragStart(event) {
+  event.preventDefault();
 }
 
 function initSlider() {
@@ -141,9 +152,11 @@ function initSlider() {
   track.addEventListener("transitionend", onTransitionEnd);
   previousButton.addEventListener("click", onPreviousClick);
   nextButton.addEventListener("click", onNextClick);
-  slider.addEventListener("touchstart", onTouchStart, { passive: true });
-  slider.addEventListener("touchmove", onTouchMove, { passive: false });
-  slider.addEventListener("touchend", onTouchEnd, { passive: true });
+  slider.addEventListener("pointerdown", onPointerDown);
+  slider.addEventListener("pointermove", onPointerMove);
+  slider.addEventListener("pointerup", onPointerUp);
+  slider.addEventListener("pointercancel", resetSwipe);
+  slider.addEventListener("dragstart", onDragStart);
 }
 
 initSlider();
