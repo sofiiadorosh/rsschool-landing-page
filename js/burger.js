@@ -13,6 +13,8 @@ function isMenuOpened() {
 }
 
 function openMenu() {
+  window.scrollTo({ top: 0, behavior: "instant" });
+
   navigation.classList.add(OPENED_NAV_CLASS);
   burgerButton.classList.add(OPENED_BUTTON_CLASS);
   burgerButton.setAttribute("aria-expanded", "true");
